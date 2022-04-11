@@ -1,0 +1,29 @@
+{
+  "name": "project-react",
+  "version": "1.0.0",
+  "description": "Project for learning everything React",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode production",
+    "build": "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack serve"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Sky",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
