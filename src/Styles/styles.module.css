@@ -1,0 +1,18 @@
+.container {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    height: 80vh;
+    border: 8px solid gray;
+}
+.title {
+    font-size: 3rem;
+}
+
+.lists {
+    text-align: left;
+    margin: auto;
+    width: 30%;
+}
+

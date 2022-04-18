@@ -1,9 +1,15 @@
 import React from "react";
-export default function App() {
+import FrontPage from "./FrontPage";
+
+const DATA = [
+	{ id: "todo-0", name: "Eat", completed: true },
+	{ id: "todo-1", name: "Sleep", completed: false },
+	{ id: "todo-2", name: "Repeat", completed: false },
+];
+export default function App(props) {
 	return (
 		<React.Fragment>
-			<h1>Project React</h1>
-			<p>what's up</p>
+			<FrontPage tasks={DATA} />
 		</React.Fragment>
 	);
 }
