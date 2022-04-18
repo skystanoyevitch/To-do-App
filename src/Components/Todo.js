@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Todo(props) {
-    const taskList = props.tas
+	const taskList = props.tas;
 	return (
 		<>
 			<li>
