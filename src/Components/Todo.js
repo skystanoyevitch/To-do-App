@@ -10,11 +10,14 @@ export default function Todo(props) {
 					htmlFor={props.id}
 					type="checkbox"
 					defaultChecked={props.completed}
+					onChange={() => props.toggleTaskCompleted(props.id)}
 				/>
 				{props.name}
 			</li>
 			<button>Edit {props.name}</button>
-			<button>Delete {props.name}</button>
+			<button type="button" onClick={() => props.deleteTask(props.id)}>
+				Delete {props.name}
+			</button>
 		</>
 	);
 }
