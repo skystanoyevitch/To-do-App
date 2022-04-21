@@ -6,10 +6,10 @@ const DATA = [
 	{ id: "todo-1", name: "Sleep", completed: false },
 	{ id: "todo-2", name: "Repeat", completed: false },
 ];
-export default function App(props) {
+export default function App() {
 	return (
-		<React.Fragment>
+		<div>
 			<FrontPage tasks={DATA} />
-		</React.Fragment>
+		</div>
 	);
 }
