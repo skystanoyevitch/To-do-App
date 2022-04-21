@@ -33,6 +33,16 @@ export default function FrontPage(props) {
 		setTasks(remainingTasks);
 	}
 
+	function editTask(id, newName) {
+		const editedTasks = tasks.map((task) => {
+			if (id === task.id) {
+				return { ...task, name: newName };
+			}
+			return task;
+		});
+		setTasks(editedTasks);
+	}
+
 	const taskList = tasks.map((task) => (
 		<Todo
 			id={task.id}
@@ -41,6 +51,7 @@ export default function FrontPage(props) {
 			key={task.id}
 			toggleTaskCompleted={toggleTaskCompleted}
 			deleteTask={deleteTask}
+			editTask={editTask}
 		/>
 	));
 
