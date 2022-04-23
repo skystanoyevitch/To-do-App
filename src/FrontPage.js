@@ -24,6 +24,20 @@ function usePrevious(value) {
 export default function FrontPage(props) {
 	const [tasks, setTasks] = useState(props.tasks);
 	const [filter, setFilter] = useState("All");
+	const [image, setImage] = useState("");
+	const [term, setTerm] = useState("");
+
+	useEffect(() => {
+		fetch(
+			`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_API_KEY}`
+		)
+			.then((res) => res.json())
+			.then((data) => {
+				setImage(data.urls.regular);
+				console.log(image);
+			})
+			.catch((err) => console.log(err));
+	}, [setImage]);
 
 	function addTask(name) {
 		const newTask = {
@@ -94,9 +108,14 @@ export default function FrontPage(props) {
 		}
 	}, [tasks.length, prevTaskLength]);
 
+	const activeImage = filter === "Active" && image;
+
 	return (
 		<>
-			<div className={css.container}>
+			<div
+				className={css.container}
+				style={{ backgroundImage: `url(${activeImage})` }}
+			>
 				<h1 className={css.title}>TODO APP</h1>
 				<h2 tabIndex="-1" ref={listHeadingRef}>
 					{" "}
