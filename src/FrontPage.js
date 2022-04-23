@@ -28,15 +28,18 @@ export default function FrontPage(props) {
 	const [term, setTerm] = useState("");
 
 	useEffect(() => {
+		const randomImage = Math.floor(Math.random() * 10);
 		fetch(
-			`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_API_KEY}`
+			`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_API_KEY}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				setImage(data.urls.regular);
+				// setImage(data);
 				console.log(image);
 			})
 			.catch((err) => console.log(err));
+
+		return setImage("");
 	}, [setImage]);
 
 	function addTask(name) {
@@ -109,6 +112,9 @@ export default function FrontPage(props) {
 	}, [tasks.length, prevTaskLength]);
 
 	const activeImage = filter === "Active" && image;
+	// const activeImage = image.map((url) => {
+
+	// })
 
 	return (
 		<>

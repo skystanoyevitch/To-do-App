@@ -7,9 +7,7 @@ export default function FilterButton(props) {
 				type="button"
 				aria-pressed={props.isPressed}
 				onClick={() => {
-
-					props.setFilter(props.name)
-					props.image
+					props.setFilter(props.name);
 				}}
 			>
 				Show {props.name} tasks
