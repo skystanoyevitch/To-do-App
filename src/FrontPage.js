@@ -100,7 +100,7 @@ export default function FrontPage(props) {
 		/>
 	));
 
-	const tasksNoun = taskList.length !== 1 ? "Tasks" : "task";
+	const tasksNoun = taskList.length !== 1 ? "Tasks" : "Task";
 	const heading = `${taskList.length} ${tasksNoun} remaining`;
 	const listHeadingRef = useRef(null);
 	const prevTaskLength = usePrevious(tasks.length);
@@ -122,10 +122,9 @@ export default function FrontPage(props) {
 				className={css.container}
 				style={{ backgroundImage: `url(${activeImage})` }}
 			>
-				<h1 className={css.title}>TODO APP</h1>
+				<h1 className={css.title}>TODOLIFY</h1>
 				<h2 tabIndex="-1" ref={listHeadingRef}>
-					{" "}
-					{heading}{" "}
+					{heading}
 				</h2>
 				<Form addTask={addTask} />
 				{filterlist}
